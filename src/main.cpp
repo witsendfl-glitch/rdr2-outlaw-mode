@@ -11,6 +11,7 @@
 #include "travel.h"
 #include "ui.h"
 #include "util.h"
+#include "war.h"
 
 #define OUTLAW_MODE_VERSION "0.1.0"
 
@@ -49,6 +50,8 @@ void RootPage() {
     if (ui::Item("Gang", std::to_string(gang::PosseCount()) + " riding")) ui::Push(gang::RosterPage);
     if (ui::Item("Orders")) ui::Push(gang::CommandsPage);
     if (ui::Item("Camp", camp::Active() ? "pitched" : "")) ui::Push(camp::MenuPage);
+    if (ui::Item("Gang Territories")) ui::Push(war::MapPage);
+    if (war::AtTerritory() && ui::Item("This territory")) ui::Push(war::HerePage);
     if (ui::Item("Travel", travel::AnyAvailable() ? "available here" : "")) ui::Push(travel::MenuPage);
     if (colter::NearStore() && ui::Item("Colter General Store")) ui::Push(colter::StorePage);
     if (ui::Item("Arthur")) ui::Push(ArthurPage);
@@ -80,6 +83,7 @@ void ScriptMain() {
             colter::Tick();
             camp::Tick();
             gang::Tick();
+            war::Tick();
             if (mode::Enabled()) {
                 if (ui::KeyPressed(followKey)) gang::OrderFollow();
                 if (ui::KeyPressed(waitKey)) gang::OrderWait();

@@ -34,6 +34,10 @@ inline void SET_PED_AS_GROUP_MEMBER(Ped ped, int groupId) { return invoke<void>(
 inline void REMOVE_PED_FROM_GROUP(Ped ped) { return invoke<void>(0xED74007FFB146BC2ULL, ped); }  // PED
 inline BOOL IS_PED_GROUP_MEMBER(Ped ped, int groupId, BOOL p2) { return invoke<BOOL>(0x9BB01E3834671191ULL, ped, groupId, p2); }  // PED
 inline void SET_GROUP_SEPARATION_RANGE(int groupId, float separationRange) { return invoke<void>(0x4102C7858CFEE4E4ULL, groupId, separationRange); }  // PED
+inline BOOL ADD_RELATIONSHIP_GROUP(const char* name, Hash* groupHash) { return invoke<BOOL>(0xF372BC22FCB88606ULL, name, groupHash); }  // PED
+inline void SET_RELATIONSHIP_BETWEEN_GROUPS(int relationship, Hash group1, Hash group2) { return invoke<void>(0xBF25EB89375A37ADULL, relationship, group1, group2); }  // PED
+inline void TASK_COMBAT_HATED_TARGETS_IN_AREA(Ped ped, float x, float y, float z, float radius, int flags, int p6) { return invoke<void>(0x4CF5F55DAC3280A0ULL, ped, x, y, z, radius, flags, p6); }  // TASK
+inline void SET_PED_SEEING_RANGE(Ped ped, float value) { return invoke<void>(0xF29CF591C4BF6CEEULL, ped, value); }  // PED
 inline void SET_PED_CAN_BE_TARGETTED_BY_PLAYER(Ped ped, Player player, BOOL toggle) { return invoke<void>(0x66B57B72E0836A76ULL, ped, player, toggle); }  // PED
 inline void SET_PED_COMBAT_ATTRIBUTES(Ped ped, int attributeIndex, BOOL enabled) { return invoke<void>(0x9F7794730795E019ULL, ped, attributeIndex, enabled); }  // PED
 inline void SET_PED_COMBAT_ABILITY(Ped ped, int abilityLevel) { return invoke<void>(0xC7622C0D36B2FDA8ULL, ped, abilityLevel); }  // PED
@@ -96,9 +100,16 @@ inline BOOL GET_GROUND_Z_FOR_3D_COORD(float x, float y, float z, float* groundZ,
 inline float VDIST(float x1, float y1, float z1, float x2, float y2, float z2) { return invoke<float>(0x2A488C176D52CCA5ULL, x1, y1, z1, x2, y2, z2); }  // BUILTIN
 inline int MONEY_GET_CASH_BALANCE() { return invoke<int>(0x0C02DABFA3B98176ULL); }  // MONEY
 inline BOOL MONEY_DECREMENT_CASH_BALANCE(int amount) { return invoke<BOOL>(0x466BC8769CF26A7AULL, amount); }  // MONEY
+inline BOOL MONEY_INCREMENT_CASH_BALANCE(int amount, Hash addReason) { return invoke<BOOL>(0xBC3422DC91667621ULL, amount, addReason); }  // MONEY
 inline void SET_GUARMA_WORLDHORIZON_ACTIVE(BOOL toggle) { return invoke<void>(0x74E2261D2A66849AULL, toggle); }  // STREAMING
 inline void SET_WORLD_WATER_TYPE(int waterType) { return invoke<void>(0xE8770EE02AEE45C2ULL, waterType); }  // WATER
 inline void SET_MINIMAP_ZONE(Hash zone) { return invoke<void>(0xA657EC9DBC6CC900ULL, zone); }  // MAP
+inline Blip BLIP_ADD_FOR_RADIUS(Hash blipHash, float x, float y, float z, float radius) { return invoke<Blip>(0x45F13B7E0A15C880ULL, blipHash, x, y, z, radius); }  // MAP
+inline BOOL BLIP_ADD_MODIFIER(Blip blip, Hash modifierHash) { return invoke<BOOL>(0x662D364ABF16DE2FULL, blip, modifierHash); }  // MAP
+inline void START_GPS_MULTI_ROUTE(Hash colorNameHash, BOOL onFoot, BOOL inVehicle) { return invoke<void>(0x3D3D15AF7BCAAF83ULL, colorNameHash, onFoot, inVehicle); }  // MAP
+inline void ADD_POINT_TO_GPS_MULTI_ROUTE(float x, float y, float z, BOOL p3) { return invoke<void>(0x64C59DD6834FA942ULL, x, y, z, p3); }  // MAP
+inline void SET_GPS_MULTI_ROUTE_RENDER(BOOL toggle) { return invoke<void>(0x4426D65E029A4DC0ULL, toggle); }  // MAP
+inline void CLEAR_GPS_MULTI_ROUTE() { return invoke<void>(0x9E0AB9AAEE87CE28ULL); }  // MAP
 inline Blip BLIP_ADD_FOR_COORDS(Hash blipHash, float x, float y, float z) { return invoke<Blip>(0x554D9D53F696D002ULL, blipHash, x, y, z); }  // MAP
 inline Blip BLIP_ADD_FOR_ENTITY(Hash blipHash, Entity entity) { return invoke<Blip>(0x23F74C2FDA6E7C61ULL, blipHash, entity); }  // MAP
 inline void SET_BLIP_SPRITE(Blip blip, Hash hash, BOOL p2) { return invoke<void>(0x74F74D3207ED525CULL, blip, hash, p2); }  // MAP

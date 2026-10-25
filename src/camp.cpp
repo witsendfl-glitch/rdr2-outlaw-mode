@@ -11,6 +11,7 @@
 #include "places.h"
 #include "ui.h"
 #include "util.h"
+#include "war.h"
 
 namespace camp {
 namespace {
@@ -220,6 +221,12 @@ void MenuPage() {
         WAIT(1500);
         DO_SCREEN_FADE_IN(1000);
         ui::Notify("You feel rested.");
+    }
+    if (util::Dist(pos, Center()) < kRestRadius && ui::Item("Collect earnings from your hideouts")) {
+        int dollars = war::CollectAll();
+        if (dollars > 0) MONEY_INCREMENT_CASH_BALANCE(dollars * 100, util::Joaat("ADD_REASON_DEFAULT"));
+        ui::Notify(dollars > 0 ? "Your boys brought in $" + std::to_string(dollars) + "."
+                               : "Nothing to collect. Take some hideouts first.");
     }
     if (ui::Item("Strike camp")) {
         Despawn();
