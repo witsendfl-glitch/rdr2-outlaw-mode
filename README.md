@@ -49,7 +49,7 @@ You can change these keys in `outlawmode.ini` under `[keys]`. Values are
 [Windows virtual-key codes](https://learn.microsoft.com/windows/win32/inputdev/virtual-key-codes)
 written as decimal numbers. For example, F5 is 116.
 
-## Known limits in 0.1
+## Known limits in 0.2
 
 - The mode starts from a save and a menu switch, not from a new option on the
   game's main menu. The game doesn't let scripts add main menu entries.

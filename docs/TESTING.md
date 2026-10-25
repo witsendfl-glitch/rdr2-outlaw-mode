@@ -58,7 +58,7 @@ Load the **slot 6 save** (the 100% epilogue save) before you start.
 
 ## 8. Properties
 - [ ] Menu > Properties > Veteran's Homestead > Mark it on my map, then ride there.
-- [ ] Buy it (you'll need $600). Use the menu to give yourself money if needed, or test with a cheaper upgrade.
+- [ ] Buy it for $600. If you're short, pull a heist or collect from a hideout first.
 - [ ] A ranch hand appears. After an upgrade, livestock shows up.
 - [ ] Wait a few minutes. The strongbox should fill, and Collect should pay out.
 
