@@ -7,13 +7,15 @@
 #include "colter.h"
 #include "config.h"
 #include "gang.h"
+#include "heist.h"
 #include "mode.h"
+#include "property.h"
 #include "travel.h"
 #include "ui.h"
 #include "util.h"
 #include "war.h"
 
-#define OUTLAW_MODE_VERSION "0.1.0"
+#define OUTLAW_MODE_VERSION "0.2.0"
 
 namespace {
 
@@ -52,6 +54,8 @@ void RootPage() {
     if (ui::Item("Camp", camp::Active() ? "pitched" : "")) ui::Push(camp::MenuPage);
     if (ui::Item("Gang Territories")) ui::Push(war::MapPage);
     if (war::AtTerritory() && ui::Item("This territory")) ui::Push(war::HerePage);
+    if (ui::Item("Heists", heist::Active() ? "job on" : "")) ui::Push(heist::MenuPage);
+    if (ui::Item("Properties")) ui::Push(property::MenuPage);
     if (ui::Item("Travel", travel::AnyAvailable() ? "available here" : "")) ui::Push(travel::MenuPage);
     if (colter::NearStore() && ui::Item("Colter General Store")) ui::Push(colter::StorePage);
     if (ui::Item("Arthur")) ui::Push(ArthurPage);
@@ -84,6 +88,8 @@ void ScriptMain() {
             camp::Tick();
             gang::Tick();
             war::Tick();
+            property::Tick();
+            heist::Tick();
             if (mode::Enabled()) {
                 if (ui::KeyPressed(followKey)) gang::OrderFollow();
                 if (ui::KeyPressed(waitKey)) gang::OrderWait();

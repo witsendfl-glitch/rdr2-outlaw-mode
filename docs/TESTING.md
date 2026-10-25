@@ -1,4 +1,4 @@
-# Test checklist for 0.1
+# Test checklist for 0.2
 
 Play through these and report anything that doesn't match. The most useful
 details are:
@@ -10,7 +10,7 @@ details are:
 Load the **slot 6 save** (the 100% epilogue save) before you start.
 
 ## 1. Mod loads
-- [ ] Press F5. A red "Outlaw Mode 0.1.0" menu appears at the top left.
+- [ ] Press F5. A red "Outlaw Mode 0.2.0" menu appears at the top left.
 - [ ] Arrow keys move the highlight, and Backspace goes back.
 - [ ] Set Outlaw Mode to On. A message confirms it.
 
@@ -47,3 +47,25 @@ Load the **slot 6 save** (the 100% epilogue save) before you start.
 - [ ] Colter should have townsfolk, a campfire, and a storekeeper with a shop icon.
 - [ ] Walk up to the storekeeper, then open Menu > Colter General Store and buy ammo and a meal.
 - [ ] Hire a carriage back.
+
+## 7. Gang wars
+- [ ] Coloured circles and hideout icons appear on the map. Menu > Gang Territories lists all 18.
+- [ ] In Saint Denis, Italians are standing around Doyle's Tavern and the docks without attacking you.
+- [ ] At Doyle's Tavern, choose Menu > This territory > Make a move. They fight back. Kill them all, and it becomes yours.
+- [ ] Ride to an O'Driscoll spot such as Clemens Point. They should shoot on sight.
+- [ ] Wait about 5 minutes. A "Gang war" message should name a gang taking a territory.
+- [ ] At your hideout, use Menu > This territory to collect money and buy an upgrade.
+
+## 8. Properties
+- [ ] Menu > Properties > Veteran's Homestead > Mark it on my map, then ride there.
+- [ ] Buy it (you'll need $600). Use the menu to give yourself money if needed, or test with a cheaper upgrade.
+- [ ] A ranch hand appears. After an upgrade, livestock shows up.
+- [ ] Wait a few minutes. The strongbox should fill, and Collect should pay out.
+
+## 9. Heists
+- [ ] Menu > Heists > Plan a bank job > Valentine Bank. A route appears.
+- [ ] Walk inside. A "Casing" percentage climbs to 100%.
+- [ ] Menu > Heists > Start the robbery (Loud). Guards and law show up, and the vault progress bar fills while you stand at the vault door.
+- [ ] Ride 500m away. You get paid.
+- [ ] Menu > Heists > Hit the payroll train. A train icon appears on the map. Ride up to the engine: it stops and guards spawn.
+- [ ] Clear the guards, stand by the middle cars until the strongbox opens, then escape.

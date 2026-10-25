@@ -127,3 +127,16 @@ inline BOOL GET_IS_LOADING_SCREEN_ACTIVE() { return invoke<BOOL>(0x71D4BF5890659
 inline BOOL IS_LOADING_SCREEN_VISIBLE() { return invoke<BOOL>(0xB54ADBE65D528FCBULL); }  // SCRIPT
 inline BOOL IS_PAUSE_MENU_ACTIVE() { return invoke<BOOL>(0x535384D6067BA42EULL); }  // HUD
 inline void PLAY_SOUND_FRONTEND(const char* audioName, const char* audioRef, BOOL p2, int p3) { return invoke<void>(0x67C540AA08E4A6F5ULL, audioName, audioRef, p2, p3); }  // AUDIO
+inline void DOOR_SYSTEM_SET_DOOR_STATE(Hash doorHash, int state) { return invoke<void>(0x6BAB9442830C7F53ULL, doorHash, state); }  // OBJECT
+inline void ADD_DOOR_TO_SYSTEM_NEW(Hash doorHash, BOOL p1, BOOL p2, BOOL p3, int threadId, int p5, BOOL p6) { return invoke<void>(0xD99229FE93B46286ULL, doorHash, p1, p2, p3, threadId, p5, p6); }  // OBJECT
+inline BOOL IS_DOOR_REGISTERED_WITH_SYSTEM(Hash doorHash) { return invoke<BOOL>(0xC153C43EA202C8C1ULL, doorHash); }  // OBJECT
+inline Vehicle CREATE_MISSION_TRAIN(Hash configHash, float x, float y, float z, BOOL direction, BOOL passengers, BOOL p6, BOOL conductor) { return invoke<Vehicle>(0xC239DBD9A57D2A71ULL, configHash, x, y, z, direction, passengers, p6, conductor); }  // VEHICLE
+inline int GET_NUM_CARS_FROM_TRAIN_CONFIG(Hash trainConfig) { return invoke<int>(0x635423D55CA84FC8ULL, trainConfig); }  // VEHICLE
+inline Hash GET_TRAIN_MODEL_FROM_TRAIN_CONFIG_BY_CAR_INDEX(Hash trainConfig, int trainCarIndex) { return invoke<Hash>(0x8DF5F6A19F99F0D5ULL, trainConfig, trainCarIndex); }  // VEHICLE
+inline void SET_TRAIN_SPEED(Vehicle train, float speed) { return invoke<void>(0xDFBA6BBFF7CCAFBBULL, train, speed); }  // VEHICLE
+inline void SET_TRAIN_CRUISE_SPEED(Vehicle train, float speed) { return invoke<void>(0x01021EB2E96B793CULL, train, speed); }  // VEHICLE
+inline void SET_TRAIN_MAX_SPEED(Vehicle train, float speed) { return invoke<void>(0x9F29999DFDF2AEB8ULL, train, speed); }  // VEHICLE
+inline void SET_TRAIN_STOPS_FOR_STATIONS(Vehicle train, BOOL toggle) { return invoke<void>(0x4182C037AA1F0091ULL, train, toggle); }  // VEHICLE
+inline Vehicle GET_TRAIN_CARRIAGE(Vehicle train, int trailerNumber) { return invoke<Vehicle>(0xD0FB093A4CDB932CULL, train, trailerNumber); }  // VEHICLE
+inline void SET_MISSION_TRAIN_AS_NO_LONGER_NEEDED(Vehicle* train, int flags) { return invoke<void>(0xBBE7648349B49BE8ULL, train, flags); }  // VEHICLE
+inline float GET_ENTITY_SPEED(Entity entity) { return invoke<float>(0xFB6BA510A533DF81ULL, entity); }  // ENTITY

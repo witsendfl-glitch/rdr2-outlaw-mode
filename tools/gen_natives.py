@@ -11,7 +11,7 @@ TYPES = {
     "void": "void", "int": "int", "BOOL": "BOOL", "float": "float", "Hash": "Hash",
     "Any": "int", "Entity": "Entity", "Ped": "Ped", "Player": "Player", "Object": "Object",
     "Vehicle": "Vehicle", "Blip": "Blip", "Vector3": "Vector3", "const char*": "const char*",
-    "Any*": "int*", "Entity*": "Entity*", "Ped*": "Ped*", "Object*": "Object*", "Blip*": "Blip*",
+    "Any*": "int*", "Entity*": "Entity*", "Ped*": "Ped*", "Object*": "Object*", "Blip*": "Blip*", "Vehicle*": "Vehicle*",
     "float*": "float*", "Hash*": "Hash*", "int*": "int*",
 }
 

@@ -38,6 +38,9 @@ bool LoadModel(Hash model, int timeoutMs) {
 
 float GroundZ(float x, float y, float zHint) {
     float ground = 0.0f;
+    // Probe just above the hint first so we land on a floor or street rather
+    // than a roof; fall back to a high probe for hillsides.
+    if (GET_GROUND_Z_FOR_3D_COORD(x, y, zHint + 3.0f, &ground, FALSE)) return ground;
     if (GET_GROUND_Z_FOR_3D_COORD(x, y, zHint + 50.0f, &ground, FALSE)) return ground;
     return zHint;
 }
